@@ -1,8 +1,8 @@
 
 var isPalindrome = function(x) {
-    if(x<0) return false;
+    // if(x<0) return false;
 let xCopy=x;
-// x= Math.abs(x);
+x= Math.abs(x);
     let reverseNumber= 0;
 
 
