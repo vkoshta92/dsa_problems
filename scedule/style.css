@@ -1,0 +1,52 @@
+  
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #f1f5f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #38bdf8;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 15px 10px;
+      font-size: 16px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+    .match-day {
+      margin-top: 25px;
+      text-align: left;
+    }
+    h2 {
+      color: #facc15;
+    }
+    .match {
+      background: #1e293b;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+    }
+    .teams {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .vs {
+      color: #fbbf24;
+    }
