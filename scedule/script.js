@@ -3,10 +3,12 @@
     const saturdayTeams = [
       "Cricket Warriors",
       "Knight Sparrow",
+      "East Titans",
       "Zodiac",
       "VIP XI",
       "Noida Super Gaints",
-      "Indian Strikers"
+      "Indian Strikers",
+      "SK"
     ];
 
     // Sunday: All 8 teams available
@@ -18,7 +20,7 @@
       "VIP XI",
       "Noida Super Gaints",
       "Indian Strikers",
-      "Karan Teams"
+      "SK"
     ];
 
     function shuffle(array) {
@@ -58,8 +60,8 @@
           const t1 = shuffled[i];
           const t2 = shuffled[i+1];
           if (
-            (t1 === "Cricket Warriors" && t2 === "Karan Teams") ||
-            (t1 === "Karan Teams" && t2 === "Cricket Warriors")
+            (t1 === "Cricket Warriors" && t2 === "Indian Strikers") ||
+            (t1 === "Indian Strikers" && t2 === "Cricket Warriors")
           ) {
             valid = false; // invalid pairing
             break;
