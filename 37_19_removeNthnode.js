@@ -1,3 +1,5 @@
+
+// // https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -31,12 +33,13 @@ var removeNthFromEnd = function (head, n) {
     second = second.next;
   }
   //just delete second.next
-
+// second node prev bn jegi jb first node null hoga kyoki n ka diffrence hai.
   second.next = second.next.next;
   return sentinal.next;
 };
+// // T- O(n)
+// // s-O(1)
 
-// // https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 
 // /**
 //  * Definition for singly-linked list.
