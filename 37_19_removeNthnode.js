@@ -17,24 +17,24 @@ var removeNthFromEnd = function (head, n) {
   // add sentinal ad start
   let sentinal = new ListNode();
   sentinal.next = head;
-  // move first pointer ahed by n
+  // move fast pointer ahed by n
 
-  let first = sentinal;
+  let fast = sentinal;
   for (let i = 0; i < n; i++) {
-    first = first.next;
+    fast = fast.next;
   }
 
   // move  both pointer untill pointer recahes last node
 
-  let second = sentinal;
+  let slow = sentinal;
 
-  while (first && first.next) {
-    first = first.next;
-    second = second.next;
+  while (fast && fast.next) {
+    fast = fast.next;
+    slow = slow.next;
   }
-  //just delete second.next
-// second node prev bn jegi jb first node null hoga kyoki n ka diffrence hai.
-  second.next = second.next.next;
+  //just delete slow.next
+// slow node prev bn jegi jb fast node null hoga kyoki n ka diffrence hai.
+  slow.next = slow.next.next;
   return sentinal.next;
 };
 // // T- O(n)
