@@ -38,7 +38,10 @@ var groupAnagrams = function (strs) {
         // Create key based on frequency array
         let key = "";
         for (let k = 0; k < 26; k++) {
-            key = key + String.fromCharCode(k + 97) + freqArr[k];
+            key = key + String.fromCharCode(k) + freqArr[k];
+            // key = key + String.fromCharCode(k+97) + freqArr[k];
+            // key = key + "#"+ freqArr[k];
+            
         }
 
         console.log("Generated Key:", key);
