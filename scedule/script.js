@@ -2,25 +2,24 @@
     // Saturday available teams (East Titans & Karan Teams not available)
     const saturdayTeams = [
       "Cricket Warriors",
-      "Knight Sparrow",
       "East Titans",
       "Zodiac",
       "VIP XI",
       "Noida Super Gaints",
       "Indian Strikers",
-      "SK"
+      "SK XI",
+      "Black Panthar"
     ];
 
     // Sunday: All 8 teams available
     const sundayTeams = [
       "Cricket Warriors",
-      "Knight Sparrow",
       "East Titans",
       "Zodiac",
       "VIP XI",
       "Noida Super Gaints",
       "Indian Strikers",
-      "SK"
+      "SK XI"
     ];
 
     function shuffle(array) {
