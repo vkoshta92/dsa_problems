@@ -3,7 +3,8 @@
  * @return {number}
  */
 
-// logic ,  2 ko rotten mn lenge  and jitne is uper niche age piche adjust honge  1 honge use 2 kr denge and minutes updated krte rhenge , phle 1 mil jega to retun  -1 kr denge, and sbse phle queue me push krtee rhenge jha 2  yni rotten mile uski position push krenge.  ab ak ak krkr usme shift krenge hatenge and uske adjusent ko 2 krenge ase puri array 2 ho jengi max min aa jenge rotten ke 
+// logic ,  2 ko rotten mn lenge  and jitne is uper niche age piche adjust honge  1 honge use 2 kr denge and minutes updated krte rhenge , phle 1 mil jega to retun  -1 kr denge, and sbse phle queue me push krtee rhenge jha 2  yni rotten mile uski position push krenge.  ab ak ak krkr usme shift krenge hatenge and uske adjusent ko 2 krenge ase puri array 2 ho jengi max min aa jenge rotten ke , 1 kbhi jiske adjust honge nhi  vo rotten nhi hoga usliye return -1 kr diya h or any fresh orange found.
+//bfs
 var orangesRotting = function(grid) {
     let m= grid.length;
     let n= grid[0].length;
@@ -66,3 +67,5 @@ let maxMinutes=0
     return maxMinutes;
     
 };
+//T- O(n2)
+// S-O(n2)
