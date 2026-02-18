@@ -1,5 +1,10 @@
+/**
+ * This file contains various important interview questions with simple logic.
+ * Isme bohot saare recruitment exams ke sawal hain jo aksar puche jaate hain.
+ * Har function ke upar uska kaam Hinglish mein samjhaya gaya hai.
+ */
 
-https://leetcode.com/problem-list/oizxjoit/
+// https://leetcode.com/problem-list/oizxjoit/
 // 1. Reverse a String
 // Ye function string ko ulta (reverse) karega
 function reverseString(str) {

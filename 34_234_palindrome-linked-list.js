@@ -1,10 +1,23 @@
 /**
- * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
- * }
+ * Question: 34_234_palindrome-linked-list (Linked List: Palindrome Linked List)
+ * 
+ * Explanation (Hinglish):
+ * Palindrome matlab jo aage se aur peeche se same dikhe (jaise 'RACECAR'). 
+ * Train mein ye check karne ke liye hum pehle beech wala dabba nikalte hain. 
+ * Phir train ke second half wale part ko ulta (reverse) kar dete hain. 
+ * Ab pehle dabbe aur dusre part ke pehle dabbe ko compare karte hain, agar sab same hai to palindrome hai!
+ * 
+ * Logic:
+ * 1. Slow/Fast pointer use karke middle dabba dhundo.
+ * 2. Middle se lekar aakhri tak ki train ko reverse kar do.
+ * 3. Ab do pointers lo: ek shuruat se (`head`) aur ek reverse wale part ke shuruat se (`prev`).
+ * 4. Dono ki values compare karte jao jab tak second list khatam na ho jaye.
  */
+ * function ListNode(val, next) {
+ * this.val = (val === undefined ? 0 : val)
+    * this.next = (next === undefined ? null : next)
+      * }
+  */
 /**
  * @param {ListNode} head
  * @return {boolean}

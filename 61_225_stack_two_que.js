@@ -1,4 +1,19 @@
-// https://leetcode.com/problems/implement-stack-using-queues/
+/**
+ * Question: 61_225_stack_two_que (Stack: Implement Stack using Two Queues)
+ * 
+ * Explanation (Hinglish):
+ * Humein Queue (jis mein pehla aaya pehla gaya) ka use karke Stack (jis mein naya aaya pehla gaya) banana hai. 
+ * Jab humein kisi dabba ko nikalna (pop) hota hai, to hum aakhri wale dabba tak pahunchne ke liye 
+ * baaki saare dabbo ko dusri queue mein bhej dete hain. 
+ * Phir aakhri dabba humara answer hota hai. Bas ye khel humein pop aur top ke liye karna padta hai.
+ * 
+ * Logic:
+ * 1. Do queues `q1` aur `q2` lo.
+ * 2. Push: Seedha `q1` mein daalo.
+ * 3. Pop: `q1` ke n-1 dabbo ko `q2` mein bhej do. Aakhri bacha hua dabba pop kar lo.
+ * 4. `q1` aur `q2` ko swap kar do taki agli baar phir se `q1` pe kaam ho sake.
+ * 5. Top: Pop jaisa hi, bas aakhri dabba nikal ke wapas queue mein daal do.
+ */
 
 var MyStack = function () {
     this.q1 = [];

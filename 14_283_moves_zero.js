@@ -1,28 +1,37 @@
-// https://leetcode.com/problems/move-zeroes/description/
-
 /**
- * @param {number[]} nums
- * @return {void} Do not return anything, modify nums in-place instead.
+ * Question: 14_283_moves_zero (https://leetcode.com/problems/move-zeroes/)
+ * 
+ * Explanation (Hinglish):
+ * Ek array hai jisme kuch zeroes hain. Humein saare zeroes ko dhakka deke aakhri mein karna hai, 
+ * par baaki numbers ka order nahi bigadna chahiye.
+ * Hum kya karte hain? Ek pointer rakhte hain jo sirf non-zero numbers ki jagah yaad rakhta hai. 
+ * Jaise hi koi non-zero number dikhe, use pointer wali jagah par rakh do aur pointer aage badhao. 
+ * Baad mein bachi hui jagah par zero bhar do.
+ * 
+ * Logic:
+ * 1. `p1` pointer ko 0 pe rakho.
+ * 2. Loop chalao: agar element zero nahi hai, to use `nums[p1]` pe rakho aur `p1++` karo.
+ * 3. Jab saare non-zero numbers aage aa jayein, to `p1` se lekar aakhri tak loop chalao aur 0 bhar do.
  */
-var moveZeroes = function(nums) {
-    let p1=0;
-    for (let i=0;i<nums.length;i++){
-        if(nums[i] !== 0){
-            nums[p1]=nums[i];
+var moveZeroes = function (nums) {
+    let p1 = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== 0) {
+            nums[p1] = nums[i];
             p1++;
         }
-        
+
     }
     // fill all remaninig element 0
-    for (i=p1;i<nums.length;i++){
-        nums[i]=0;
+    for (i = p1; i < nums.length; i++) {
+        nums[i] = 0;
     }
     // or
     //  nums.slice(p1).fill(0).forEach((val, index) => {
     //     nums[p1 + index] = val;
     // });
 
-    
+
 };
 
 

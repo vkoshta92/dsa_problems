@@ -1,3 +1,17 @@
+/**
+ * Question: 2_smallest_num (Array: Find Smallest Number)
+ * 
+ * Explanation (Hinglish):
+ * Jaise bada number dhunda tha, waise hi sabse chota number dhundna hai. 
+ * Is baar race mein wo jitega jo sabse chota hoga. 
+ * Hum shuruat mein ek bahut bada number `Infinity` le lete hain taki koi bhi normal number usse chota hi nikle.
+ * 
+ * Logic:
+ * 1. Ek variable `smallest` banao jisme shuru mein `Infinity` rakho.
+ * 2. Array pe loop chalao.
+ * 3. Agar current number `smallest` se chota hai, to use `smallest` bana do.
+ * 4. Loop ke baad result return kardo.
+ */
 
 function findSmallest(arr) {
     let smallest = Infinity || arr[0];

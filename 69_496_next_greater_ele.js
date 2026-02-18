@@ -1,10 +1,20 @@
+/**
+ * Question: 69_496_next_greater_ele (Stack: Next Greater Element I)
+ * 
+ * Explanation (Hinglish):
+ * Humein array mein har number ke liye uske right side wala sabse pehla 'bada' number dhundna hai. 
+ * Hum peeche se (reverse) chalte hain. Ek Stack banate hain jo humein 'potential' bade numbers dikhata hai. 
+ * Jab bhi hum chote dabbo se bade dabba pe aate hain, hum choton ko pop kar dete hain kyunki humein sirf rights side ka pehla bada chahiye. 
+ * Hum results ko ek map mein save kar lete hain.
+ * 
+ * Logic:
+ * 1. Loop chalao array `nums2` pe peeche se.
+ * 2. Stack mein jo bhi number `arr[i]` se chota hai, use pop kar do (O(n) monotonic stack).
+ * 3. Agar stack empty hai, to matlab right mein koi bada nahi hai (ans -1). 
+ * 4. Warna stack ka top hi humara answer hai. Map mein save karo: `map[arr[i]] = top`.
+ * 5. Last mein `nums1` ke hisab se map se values nikalo.
+ */
 
-
-// logic - array me ulta chlenge end se last vlaue  ka gratr hmesa -1 hoga. loop chlenge to arr[i]< top hai nge== top  , agar arr[i]>top stack me jo vaulue dal rhe the greater milne pr use pop krte rhrnge jb tk mil na aje greater, jase hi milega vo grater ho jega and anhi mila to vo -1 ho jega. pop isliye kiya  bhle hi value ht je pr jab greater vlue mil gyi bich me to ye sure h ki left side vlo ke liye is value se right pr kuch nhi hoga.  ase hi loop chlte rhenge aund end me array print kr denge.
-
-
-
-// optimize way
 /**
  * @param {number[]} nums1
  * @param {number[]} nums2

@@ -1,4 +1,18 @@
-// https://leetcode.com/problems/reverse-string-ii/description/
+/**
+ * Question: 52_541_reverse_string (String: Reverse String II)
+ * 
+ * Explanation (Hinglish):
+ * String ko thoda ajeeb tarike se reverse karna hai. 
+ * Har 2k characters mein se pehle k characters ko reverse karna hai, aur agle k ko waise hi chhod dena hai. 
+ * Hum 2k ke steps mein jump karte hain. 
+ * Har baar jump ke baad pehle k characters ko pakadte hain aur unhe swap karke ulta kar dete hain.
+ * 
+ * Logic:
+ * 1. String ko array mein badlo (kyunki string immutable hoti hai).
+ * 2. Loop chalao: `x = x + 2*k` ke jump ke saath.
+ * 3. Har jump pe pehle `k` elements ko reverse karo (using two-pointer swap logic).
+ * 4. Dhyaan rakho ki agar bache huye characters `k` se kam hain, to poore bache huye ko reverse kar do.
+ */
 
 /**
  * @param {string} s

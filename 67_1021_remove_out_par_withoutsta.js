@@ -1,3 +1,18 @@
+/**
+ * Question: 67_1021_remove_out_par_withoutsta (Stack: Remove Outermost Parentheses - No Stack)
+ * 
+ * Explanation (Hinglish):
+ * Is approach mein hum stack nahi, sirf ek count (level) use karte hain. 
+ * Jab '(' aaye to level badhao. Agar level 1 se bada ho gaya, matlab hum 'andar' hain. 
+ * Jab ')' aaye to agar level 1 se bada hai, to use jodo aur phir level ghatao. 
+ * Ye bina extra space liye humein result de deta hai.
+ * 
+ * Logic:
+ * 1. `level = 0` aur `ans = ""` lo.
+ * 2. '(' milne par: agar `level > 0` hai to jodo, phir `level++`.
+ * 3. ')' milne par: `level--` karo, agar `level > 0` hai to jodo.
+ */
+
 // https://leetcode.com/problems/remove-outermost-parentheses/
 /**
  * @param {string} s

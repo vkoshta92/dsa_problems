@@ -1,4 +1,21 @@
 /**
+ * Question: 68._150_reverse_polish_notation (Stack: Evaluate Reverse Polish Notation)
+ * 
+ * Explanation (Hinglish):
+ * Humein ek mathematical expression solve karna hai jisme operators baad mein aate hain (jaise "3 4 +"). 
+ * Iska simple logic ye hai: jab tak numbers milein, stack mein rakhte jao. 
+ * Jaise hi koi sign (+, -, *, /) mile, stack se pichle do numbers nikalo aur unhe solve kar do. 
+ * Jo result aaye use wapas stack mein daal do.
+ * 
+ * Logic:
+ * 1. Stack banao. Tokens pe loop chalao.
+ * 2. Agar token number hai, to push karo.
+ * 3. Agar operator hai, to do numbers pop karo (`a`, `b`). 
+ * 4. Solve karo: `b (operator) a`. Division mein `Math.trunc` use karo zero ki taraf round karne ke liye.
+ * 5. Last mein stack ka bacha hua dabba return karo.
+ */
+
+/**
  * @param {string[]} tokens
  * @return {number}
  */

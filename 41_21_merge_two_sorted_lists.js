@@ -1,4 +1,21 @@
-// https://leetcode.com/problems/merge-two-sorted-lists/description/
+/**
+ * Question: 41_21_merge_two_sorted_lists (Linked List: Merge Two Sorted Lists)
+ * 
+ * Explanation (Hinglish):
+ * Do sorted trains ko milaake ek badi sorted train banani hai. 
+ * Hum dono trains ke engine pe khade ho jate hain. 
+ * Jis train ka engine wala dabba chota hai, use apni nayi train mein pehle jodte hain, 
+ * phir us train mein ek kadam aage badh jate hain. 
+ * Ye tab tak karte hain jab tak dono mein se koi ek train khatam na ho jaye. 
+ * Jo bchi hui train hai, use seedha apni nayi train ke peeche jod dete hain.
+ * 
+ * Logic:
+ * 1. Ek dummy node `curr` banao jahan se nayi train shuru hogi.
+ * 2. `dummyNode` mein `curr` ka start save kar lo.
+ * 3. While loop: jab tak `l1` aur `l2` dono exist karein, unke values compare karo.
+ * 4. Choti value wale node ko `curr.next` se jodo aur us list mein aage badho.
+ * 5. Last mein agar koi list bach jaye (`!l1` ya `!l2`), use `curr.next` se direct jodo.
+ */
 
 
 

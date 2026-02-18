@@ -1,5 +1,19 @@
-
-// // https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+/**
+ * Question: 37_19_removeNthnode (Linked List: Remove Nth Node From End of List)
+ * 
+ * Explanation (Hinglish):
+ * Train ke peeche se kisi dabbe ko nikalna hai (jaise peeche se 2nd dabba). 
+ * Par humein train ki length nahi pata. Ek badhiya trick hai: 
+ * Do log (Slow aur Fast) ko train mein rakho. Fast wale ko `n` kadam aage bhej do. 
+ * Ab dono ko saath mein ek-ek kadam badhao. 
+ * Jab Fast wala train ke dumm (end) pe pahunchega, to Slow wala thik us dabbe pe hoga jise udaana hai!
+ * 
+ * Logic:
+ * 1. Ek `sentinal` node banao head ke pehle.
+ * 2. Pointer `fast` ko `n` steps aage badhao.
+ * 3. Phir `slow` aur `fast` dono ko ek saath badhao jab tak `fast.next` null na ho.
+ * 4. `slow.next = slow.next.next` karke target dabba nikal do.
+ */
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -33,7 +47,7 @@ var removeNthFromEnd = function (head, n) {
     slow = slow.next;
   }
   //just delete slow.next
-// slow node prev bn jegi jb fast node null hoga kyoki n ka diffrence hai.
+  // slow node prev bn jegi jb fast node null hoga kyoki n ka diffrence hai.
   slow.next = slow.next.next;
   return sentinal.next;
 };

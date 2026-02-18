@@ -1,7 +1,22 @@
+/**
+ * Question: 60_49_group_anagram_approach2 (String: Group Anagrams - Counting Approach)
+ * 
+ * Explanation (Hinglish):
+ * Sorting wala tarika slow ho sakta hai agar words bahut bade hon. 
+ * Is approach mein hum sorting nahi karte, balki har letter ki ginti (count) ka ek 'pata' (key) banate hain. 
+ * Jaise "abb" ka pata hoga: a1b2c0...z0. 
+ * Jin words ka ye pata same hai, wahi anagram groups hain. 
+ * Isse humein sorting ke bina hi result mil jata hai jo bada fast hota hai.
+ * 
+ * Logic:
+ * 1. Map banao. Words pe loop chalao.
+ * 2. Har word ke liye 26 size ka frequency array banao (a to z).
+ * 3. Count characters: `charCodeAt` use karke index nikaalo.
+ * 4. Freq array ko string key mein badlo (e.g., "a1b2...").
+ * 5. Key ke basis pe map mein group karo aur last mein values return karo.
+ */
 
 // https://leetcode.com/problems/group-anagrams/
-
-
 
 /**
  * @param {string[]} strs
