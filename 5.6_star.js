@@ -9,13 +9,21 @@
  * Logic:
  * 1. Loop `i` (lines).
  * 2. Loop `j` (stars): 0 se `n - i` tak stars append karo.
+ * 
+ * Complexity:
+ * - Time Complexity: O(n^2) - nested loops.
+ * - Space Complexity: O(n) - row string storage.
  */
 
-let n = 5;
-for (let i = 0; i < n; i++) {
-    let row = " ";
-    for (let j = 0; j < n - i; j++) {
-        row += " * "
+function invertedStarTriangle(n) {
+    for (let i = 0; i < n; i++) {
+        let row = "";
+        for (let j = 0; j < n - i; j++) {
+            row += " * ";
+        }
+        console.log(row);
     }
-    console.log("row", row)
 }
+
+console.log("Inverted Star Triangle Pattern (5 rows):");
+invertedStarTriangle(5);

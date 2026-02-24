@@ -9,10 +9,14 @@
  * 
  * Logic:
  * 1. Do variables lo: `firstLargest` aur `secondLargest` (dono `-Infinity`).
- * 2. Loop characters:
+ * 2. Loop elements:
  *    - Agar `current > first`: `second = first`, `first = current`.
  *    - Agar `current > second` aur `current != first`: `second = current`.
  * 3. Last mein `secondLargest` return karo.
+ * 
+ * Complexity:
+ * - Time Complexity: O(n) - Single pass through the array.
+ * - Space Complexity: O(1) - Fixed number of variables used.
  */
 function secondLargestNumber(arr) {
     let firstLargest = -Infinity;
@@ -32,11 +36,9 @@ function secondLargestNumber(arr) {
     }
     // return secondLargest===-Infinity?null:secondLargest;
     return secondLargest;
-
-
 }
 
-let arr = [1, -1, 35, 3, 124, 4, -89, 124, 56];
-
-let ans = secondLargestNumber(arr);
-console.log(ans);
+// --- Test Case ---
+let arr_3 = [1, -1, 35, 3, 124, 4, -89, 124, 56];
+console.log(`Array: [${arr_3}]`);
+console.log(`Second Largest: ${secondLargestNumber(arr_3)}`); // Expected: 56

@@ -11,13 +11,21 @@
  * 2. Har line ke liye ek khali `row` string banao.
  * 3. Loop `j` chalao har line mein sitare jodne ke liye (jaise 4 baar).
  * 4. Line poori hone par `console.log(row)` karke chapa do.
+ * 
+ * Complexity:
+ * - Time Complexity: O(n^2) - Nested loop chal raha hai.
+ * - Space Complexity: O(n) - Har row ko string mein store kar rahe print karne ke liye.
  */
 
-for (let i = 0; i < 4; i++) {
-    let row = " ";
-    for (let j = 0; j < 4; j++) {
-        row += " * "
+function squareStar(n) {
+    for (let i = 0; i < n; i++) {
+        let row = "";
+        for (let j = 0; j < n; j++) {
+            row += " * ";
+        }
+        console.log(row);
     }
-    console.log(row)
 }
-// i is resposible for row how many row j is responsible for coloum how many collum
+
+console.log("Square Star Pattern (4x4):");
+squareStar(4);

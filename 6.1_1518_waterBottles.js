@@ -13,20 +13,24 @@
  * 3. `fullbottles = Math.floor(empty / exchange_rate)`.
  * 4. Inhe piyo aur `total` mein jodo.
  * 5. Nayi khali botalein = jo bachi thi + jo abhi exchange se mili.
+ * 
+ * Complexity:
+ * - Time Complexity: O(log(numBottles)) - Har round mein botalein kam hoti jati hain.
+ * - Space Complexity: O(1) - Humne koi extra list use nahi ki.
  */
 
-/**
- * @param {number} numBottles
- * @param {number} numExchange
- * @return {number}
- */
 var numWaterBottles = function (numBottles, numExchange) {
     let totalBottles = numBottles;
     let emptyBottles = numBottles;
     while (emptyBottles >= numExchange) {
         let fullbottle = Math.floor(emptyBottles / numExchange);
         totalBottles += fullbottle;
-        emptyBottles = fullbottle + (emptyBottles % numExchange)
+        emptyBottles = fullbottle + (emptyBottles % numExchange);
     }
-    return totalBottles
+    return totalBottles;
 };
+
+// --- Test Case ---
+let b = 9, e = 3;
+console.log(`Bottles: ${b}, Exchange: ${e}`);
+console.log(`Total drinkable: ${numWaterBottles(b, e)}`); // Expected: 13

@@ -8,22 +8,23 @@
  * Logic:
  * 1. Loop `i` (lines).
  * 2. Loop `j` (inner): toggle number variable use karke 1 aur 0 chapo.
+ * 
+ * Complexity:
+ * - Time Complexity: O(n^2) - nested loops.
+ * - Space Complexity: O(n) - row string storage.
  */
 
-let n = 6;
-let isSwich = 1;
-
-for (let i = 0; i < n; i++) {
-    let row = " ";
-    for (let j = 0; j < i + 1; j++) {
-        row = row + isSwich;
-        // new row me toggle 1 se strt ho jega phir alternative hota rhega.
-        if (isSwich === 1) {
-            isSwich = 0;
+function binaryTriangle(n) {
+    let isSwitch = 1;
+    for (let i = 0; i < n; i++) {
+        let row = "";
+        for (let j = 0; j < i + 1; j++) {
+            row += isSwitch;
+            isSwitch = (isSwitch === 1) ? 0 : 1;
         }
-        else {
-            isSwich = 1;
-        }
+        console.log(row);
     }
-    console.log("row", row)
 }
+
+console.log("Binary Triangle Pattern (6 rows):");
+binaryTriangle(6);

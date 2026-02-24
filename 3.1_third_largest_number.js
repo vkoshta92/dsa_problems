@@ -13,6 +13,10 @@
  *    - Agar `first > current > second`: 3rd=2nd, 2nd=current.
  *    - Agar `second > current > third`: 3rd=current.
  * 3. Last mein `third` return karo.
+ * 
+ * Complexity:
+ * - Time Complexity: O(n) - Sirf ek baar poore array ko dekha.
+ * - Space Complexity: O(1) - Constant variables use kiye.
  */
 function thirdLargestNumber(arr) {
     if (arr.length < 3) {
@@ -43,5 +47,7 @@ function thirdLargestNumber(arr) {
 
 }
 
-let arr = [1, -1, 35, 45, 3, 56, 4, -89, 124, 467];
-console.log(thirdLargestNumber(arr)); // 124
+// --- Test Case ---
+let arr_3_1 = [1, -1, 35, 45, 3, 56, 4, -89, 124, 467];
+console.log(`Array: [${arr_3_1}]`);
+console.log(`Third Largest: ${thirdLargestNumber(arr_3_1)}`); // Expected: 124

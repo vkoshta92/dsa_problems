@@ -8,13 +8,21 @@
  * Logic:
  * 1. Loop `i` (lines).
  * 2. Andar wala loop `j` sirf `i + 1` ko bar-bar chapta rahega.
+ * 
+ * Complexity:
+ * - Time Complexity: O(n^2) - nested loops.
+ * - Space Complexity: O(n) - string storage.
  */
 
-let n = 4;
-for (let i = 0; i < n; i++) {
-  let row = "";
-  for (let j = 0; j <= i; j++) {
-    row += (i + 1);
+function sameNumberTriangle(n) {
+  for (let i = 0; i < n; i++) {
+    let row = "";
+    for (let j = 0; j <= i; j++) {
+      row += (i + 1);
+    }
+    console.log(row);
   }
-  console.log(row);
 }
+
+console.log("Same Number Triangle Pattern (4 rows):");
+sameNumberTriangle(4);

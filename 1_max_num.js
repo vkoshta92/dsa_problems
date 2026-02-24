@@ -11,10 +11,14 @@
  * 2. Array pe loop chalao.
  * 3. Agar current number `largestValue` se bada hai, to `largestValue` ko update kardo.
  * 4. Loop khatam hone par winner return kardo.
+ * 
+ * Complexity:
+ * - Time Complexity: O(n) - Kyunki hum poore array mein sirf ek baar ghoomte hain.
+ * - Space Complexity: O(1) - Kyunki humne sirf ek variable use kiya hai, extra space nahi li.
  */
 
 function findLargest(arr) {
-    let largestValue = -Infinity || arr[0];
+    let largestValue = -Infinity; // ya arr[0] bhi le sakte ho
     // sbse chota number lenge tki compare kar ske.
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] > largestValue) {
@@ -23,7 +27,8 @@ function findLargest(arr) {
     }
     return largestValue;
 }
-let arr = [1, -1, 35, 3, 56, 4, -89, 124];
 
-let answer = findLargest(arr);
-console.log(`Largest Number is ${answer}`);
+// --- Test Case ---
+let arr = [1, -1, 35, 3, 56, 4, -89, 124];
+console.log(`Array: [${arr}]`);
+console.log(`Largest Number: ${findLargest(arr)}`); // Expected: 124

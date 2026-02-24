@@ -11,10 +11,14 @@
  * 2. Array pe loop chalao.
  * 3. Agar current number `smallest` se chota hai, to use `smallest` bana do.
  * 4. Loop ke baad result return kardo.
+ * 
+ * Complexity:
+ * - Time Complexity: O(n) - Hum poore array ko ek baar check karte hain.
+ * - Space Complexity: O(1) - Humne koi extra array ya bada dabba use nahi kiya.
  */
 
 function findSmallest(arr) {
-    let smallest = Infinity || arr[0];
+    let smallest = Infinity;
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] < smallest) {
             smallest = arr[i];
@@ -22,7 +26,8 @@ function findSmallest(arr) {
     }
     return smallest;
 }
-let arr = [1, -1, 35, 3, 56, 4, -89, 124];
 
-let answer = findSmallest(arr);
-console.log(`Largest Number is ${answer}`);
+// --- Test Case ---
+let arr_2 = [1, -1, 35, 3, 56, 4, -89, 124];
+console.log(`Array: [${arr_2}]`);
+console.log(`Smallest Number: ${findSmallest(arr_2)}`); // Expected: -89

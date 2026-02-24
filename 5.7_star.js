@@ -9,17 +9,26 @@
  * 1. Loop `i` (lines).
  * 2. Pehla andar wala loop `j` khali spaces chapta hai (jitni kam line, utni zyada spaces).
  * 3. Dusra andar wala loop `k` sitara chapta hai.
+ * 
+ * Complexity:
+ * - Time Complexity: O(n^2) - nested loops.
+ * - Space Complexity: O(n) - row string storage.
  */
 
-let n = 5;
-
-for (let i = 0; i < 5; i++) {
-    let row = " ";
-    for (j = 0; j < n - (i + 1); j++) {  // for empty space
-        row = row + "   "
+function shiftedStarTriangle(n) {
+    for (let i = 0; i < n; i++) {
+        let row = "";
+        // Spaces
+        for (let j = 0; j < n - (i + 1); j++) {
+            row += "   ";
+        }
+        // Stars
+        for (let k = 0; k < i + 1; k++) {
+            row += " * ";
+        }
+        console.log(row);
     }
-    for (k = 0; k < i + 1; k++) { // for usual peint 1 2 3 4 5 star
-        row = row + " * "
-    }
-    console.log(row);
 }
+
+console.log("Shifted Star Triangle Pattern (5 rows):");
+shiftedStarTriangle(5);

@@ -9,13 +9,21 @@
  * Logic:
  * 1. Loop `i` (lines) shuru se n tak.
  * 2. Andar wala loop `j` hamesha 1 se shuru hoga par khatam `n - i` par hoga.
+ * 
+ * Complexity:
+ * - Time Complexity: O(n^2) - nested loops.
+ * - Space Complexity: O(n) - row string storage.
  */
 
-let n = 5;
-for (let i = 0; i < n; i++) {
-  let row = "";
-  for (let j = 0; j < n - i; j++) {
-    row += (j + 1);
+function invertedNumberTriangle(n) {
+  for (let i = 0; i < n; i++) {
+    let row = "";
+    for (let j = 0; j < n - i; j++) {
+      row += (j + 1);
+    }
+    console.log(row);
   }
-  console.log(row);
 }
+
+console.log("Inverted Number Triangle Pattern (5 rows):");
+invertedNumberTriangle(5);
