@@ -71,6 +71,9 @@ var searchRange = function(nums, target) {
     if (nums[r] === target) {
         ans[1] = r;
     }
+    // if (nums[l] === target) { // ye bhi kr skte h
+    //     ans[1] = l;
+    // }
 
     return ans;
 
