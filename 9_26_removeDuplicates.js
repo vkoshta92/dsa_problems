@@ -13,6 +13,18 @@
  * 3. Agar `nums[i] > nums[pointer]`, matlab naya unique element mila!
  * 4. Pointer ko aage badhao (`pointer++`) aur wahan naya element rakh do.
  * 5. Last mein `pointer + 1` return karo (yahi count hai unique elements ka).
+ * 
+ * ============================================================================
+ * TIME COMPLEXITY: O(n)
+ * - Single pass through the array
+ * - Each element is visited exactly once
+ * - Two-pointer technique ensures linear time
+ * 
+ * SPACE COMPLEXITY: O(1)
+ * - Only using a constant amount of extra space
+ * - Variables: pointer, i (both O(1))
+ * - Modifying array in-place, no additional arrays
+ * ============================================================================
  */
 
 /**

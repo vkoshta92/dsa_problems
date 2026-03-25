@@ -1,3 +1,45 @@
+/**
+ * ============================================================================
+ * PROBLEM: Find Median from Data Stream
+ * ============================================================================
+ * Design a data structure that supports adding numbers and finding the
+ * median of all added numbers. Median is the middle value in sorted order.
+ * 
+ * ============================================================================
+ * APPROACH: Two Heaps (MaxHeap + MinHeap)
+ * ============================================================================
+ * Logic:
+ * 1. Use MaxHeap for the left half (smaller elements)
+ * 2. Use MinHeap for the right half (larger elements)
+ * 3. Keep heaps balanced (left size = right size or left size = right size + 1)
+ * 4. Median is top of left heap (odd) or average of both tops (even)
+ * 
+ * Why Two Heaps?
+ * - We need efficient access to middle element(s)
+ * - MaxHeap gives us largest of smaller half
+ * - MinHeap gives us smallest of larger half
+ * - Together they give us the median in O(1)
+ * 
+ * Balancing Strategy:
+ * - Always push to left (MaxHeap), then move to right (MinHeap)
+ * - If right has more elements, move one back to left
+ * - This keeps left size >= right size (difference at most 1)
+ * 
+ * Example stream: 1, 2, 3
+ * - Add 1: left=[1], right=[] → median = 1
+ * - Add 2: left=[1], right=[2] → median = (1+2)/2 = 1.5
+ * - Add 3: left=[1,2], right=[3] → median = 2
+ * 
+ * ============================================================================
+ * TIME COMPLEXITY:
+ * - addNum: O(log n) - heap operations
+ * - findMedian: O(1) - peek at heap tops
+ * 
+ * SPACE COMPLEXITY: O(n)
+ * - Store all added numbers across both heaps
+ * ============================================================================
+ */
+
 class MedianFinder {
   constructor() {
     // MaxHeap for left half

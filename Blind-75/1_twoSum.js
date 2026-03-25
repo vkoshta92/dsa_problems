@@ -1,4 +1,33 @@
-// https://chatgpt.com/c/694ac11b-3ee4-8320-9bb2-1668d545507f
+/**
+ * ============================================================================
+ * PROBLEM: Two Sum
+ * ============================================================================
+ * Given an array of integers nums and an integer target, return indices of the 
+ * two numbers such that they add up to target.
+ * 
+ * ============================================================================
+ * APPROACH: Hash Map (One Pass)
+ * ============================================================================
+ * Logic:
+ * 1. Use a hash map to store each number and its index
+ * 2. For each number, calculate the complement (target - current number)
+ * 3. If complement exists in map, we found the pair
+ * 4. Otherwise, store current number with its index
+ * 
+ * Why this works:
+ * - We only need to find ONE pair that sums to target
+ * - Hash map gives O(1) lookup for complement
+ * - One pass through array is enough
+ * 
+ * ============================================================================
+ * TIME COMPLEXITY: O(n)
+ * - Single pass through the array
+ * - Hash map operations are O(1) on average
+ * 
+ * SPACE COMPLEXITY: O(n)
+ * - In worst case, we store all n elements in the hash map
+ * ============================================================================
+ */
 
 function twoSum(nums, target) {
   // Map to store number -> index

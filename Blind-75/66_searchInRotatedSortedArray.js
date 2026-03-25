@@ -1,3 +1,29 @@
+/**
+ * ============================================================================
+ * PROBLEM: Search in Rotated Sorted Array
+ * ============================================================================
+ * Same as problem 56 - duplicate file. See detailed explanation there.
+ * Given a sorted array rotated at unknown pivot, find target in O(log n).
+ * 
+ * ============================================================================
+ * APPROACH: Modified Binary Search
+ * ============================================================================
+ * Logic:
+ * 1. Find which half is sorted (compare mid with left/right)
+ * 2. Check if target lies in sorted half
+ * 3. If yes, search that half; otherwise search other half
+ * 
+ * Key Property:
+ * - In rotated array, at least one half is always sorted
+ * - nums[left] <= nums[mid means left half sorted
+ * - Otherwise right half is sorted
+ * 
+ * ============================================================================
+ * TIME COMPLEXITY: O(log n)
+ * SPACE COMPLEXITY: O(1)
+ * ============================================================================
+ */
+
 function search(nums, target) {
   let left = 0;
   let right = nums.length - 1;

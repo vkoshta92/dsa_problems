@@ -1,3 +1,29 @@
+/**
+ * ============================================================================
+ * PROBLEM: Find Minimum in Rotated Sorted Array
+ * ============================================================================
+ * Same as problem 57 - duplicate file. See detailed explanation there.
+ * Given a sorted array rotated at unknown pivot, find minimum element.
+ * 
+ * ============================================================================
+ * APPROACH: Binary Search
+ * ============================================================================
+ * Logic:
+ * 1. Compare mid with right element
+ * 2. If mid > right: minimum is in right half
+ * 3. If mid <= right: minimum is mid or in left half
+ * 
+ * Key Insight:
+ * - Minimum is at rotation point
+ * - If mid > right, we're in larger portion → go right
+ * - If mid <= right, we're in smaller portion → go left
+ * 
+ * ============================================================================
+ * TIME COMPLEXITY: O(log n)
+ * SPACE COMPLEXITY: O(1)
+ * ============================================================================
+ */
+
 function findMin(nums) {
   let left = 0;
   let right = nums.length - 1;

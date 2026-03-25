@@ -1,3 +1,41 @@
+/**
+ * ============================================================================
+ * PROBLEM: Set Matrix Zeroes
+ * ============================================================================
+ * Given an m x n matrix, if an element is 0, set its entire row and
+ * column to 0. Must be done in-place.
+ * 
+ * ============================================================================
+ * APPROACH: Use First Row and Column as Markers
+ * ============================================================================
+ * Logic:
+ * 1. Use first row and first column as marker arrays
+ * 2. First, check if first row/column need to be zeroed
+ * 3. For other cells, mark row/column header if cell is 0
+ * 4. Second pass: zero cells based on markers
+ * 5. Finally, zero first row/column if needed
+ * 
+ * Why This Works:
+ * - Instead of extra arrays, use the matrix itself
+ * - matrix[i][0] = 0 means row i should be zeroed
+ * - matrix[0][j] = 0 means column j should be zeroed
+ * - Special handling needed for first row/column
+ * 
+ * Example:
+ * Original:        After marking:
+ * [1, 1, 1]       [1, 0, 1]
+ * [1, 0, 1]   →   [0, 0, 0]
+ * [1, 1, 1]       [1, 0, 1]
+ * 
+ * ============================================================================
+ * TIME COMPLEXITY: O(m * n)
+ * - Multiple passes through matrix
+ * 
+ * SPACE COMPLEXITY: O(1)
+ * - Only two boolean variables for first row/column
+ * ============================================================================
+ */
+
 function setZeroes(matrix) {
   let firstRowZero = false;
   let firstColZero = false;

@@ -1,3 +1,47 @@
+/**
+ * ============================================================================
+ * PROBLEM: Alien Dictionary
+ * ============================================================================
+ * Given a sorted dictionary of alien language, find order of characters.
+ * Words are sorted lexicographically according to alien language rules.
+ * 
+ * ============================================================================
+ * APPROACH: Topological Sort (Kahn's Algorithm)
+ * ============================================================================
+ * Logic:
+ * 1. Build graph by comparing adjacent words
+ * 2. First different character gives ordering relation
+ * 3. Use topological sort to find character order
+ * 4. If cycle exists, return "" (invalid ordering)
+ * 
+ * Building Graph:
+ * - Compare adjacent words character by character
+ * - First mismatch: word1[j] comes before word2[j]
+ * - Add edge: word1[j] → word2[j]
+ * 
+ * Edge Case:
+ * - If word1 is prefix of word2 and longer: invalid
+ * - Example: ["abc", "ab"] is invalid
+ * 
+ * Example: ["wrt", "wrf", "er", "ett", "rftt"]
+ * - wrt vs wrf: t → f
+ * - wrf vs er: w → e
+ * - er vs ett: r → t
+ * - ett vs rftt: e → r
+ * - Graph: w→e→r→t→f
+ * - Order: "wertf"
+ * 
+ * ============================================================================
+ * TIME COMPLEXITY: O(C)
+ * - C = total characters across all words
+ * - Building graph: O(C)
+ * - Topological sort: O(V + E) where V = unique chars
+ * 
+ * SPACE COMPLEXITY: O(V + E)
+ * - Graph and indegree storage
+ * ============================================================================
+ */
+
 function alienOrder(words) {
   // Adjacency list for graph
   const graph = {};

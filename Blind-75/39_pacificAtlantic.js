@@ -1,3 +1,43 @@
+/**
+ * ============================================================================
+ * PROBLEM: Pacific Atlantic Water Flow
+ * ============================================================================
+ * Given an m x n matrix of heights, water can flow to adjacent cells with
+ * equal or lower height. Find cells where water can flow to BOTH Pacific
+ * (top/left edges) and Atlantic (bottom/right edges) oceans.
+ * 
+ * ============================================================================
+ * APPROACH: DFS from Ocean Borders
+ * ============================================================================
+ * Logic:
+ * 1. Instead of checking each cell, start from ocean borders
+ * 2. DFS inward, marking cells reachable from each ocean
+ * 3. A cell reachable from both oceans is our answer
+ * 
+ * Why Reverse Flow?
+ * - Original problem: does water flow from cell to ocean?
+ * - Reverse: which cells can be reached from ocean?
+ * - Both are equivalent but reverse is easier
+ * - We only need to check cells "higher or equal" going inward
+ * 
+ * Pacific Border: Top row + Left column
+ * Atlantic Border: Bottom row + Right column
+ * 
+ * Example:
+ * Pacific reachable: Start from top/left, flow uphill
+ * Atlantic reachable: Start from bottom/right, flow uphill
+ * Intersection = cells reaching both oceans
+ * 
+ * ============================================================================
+ * TIME COMPLEXITY: O(m * n)
+ * - Each cell visited at most twice (once per ocean)
+ * 
+ * SPACE COMPLEXITY: O(m * n)
+ * - Two visited matrices
+ * - Recursion stack in worst case
+ * ============================================================================
+ */
+
 function pacificAtlantic(heights) {
   const rows = heights.length;
   const cols = heights[0].length;

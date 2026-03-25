@@ -1,3 +1,42 @@
+/**
+ * ============================================================================
+ * PROBLEM: Minimum Window Substring
+ * ============================================================================
+ * Given two strings s and t, return the minimum window substring of s such 
+ * that every character in t (including duplicates) is included in the window.
+ * If there is no such substring, return the empty string "".
+ * 
+ * ============================================================================
+ * APPROACH: Sliding Window with Character Count
+ * ============================================================================
+ * Logic:
+ * 1. Create frequency map for characters in t (what we need)
+ * 2. Use two pointers for sliding window
+ * 3. Expand window by moving right pointer until all chars found
+ * 4. When all chars found, try to shrink from left (minimize window)
+ * 5. Track minimum window throughout
+ * 
+ * Key Variables:
+ * - count: number of characters still needed (0 = all found)
+ * - map: tracks required characters (positive = needed, negative = extra)
+ * 
+ * Why map values can be negative:
+ * - When we add a char that's in t, we decrement map[char]
+ * - If we have more of that char than needed, map[char] becomes negative
+ * - This helps us know if we can shrink the window
+ * 
+ * ============================================================================
+ * TIME COMPLEXITY: O(n + m)
+ * - n = length of string s
+ * - m = length of string t
+ * - Each character in s is visited at most twice (once by each pointer)
+ * 
+ * SPACE COMPLEXITY: O(k)
+ * - k = number of unique characters in t
+ * - Map stores at most k entries
+ * ============================================================================
+ */
+
 function minWindow(s, t) {
   if (!s || !t) return "";
 

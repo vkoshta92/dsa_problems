@@ -1,3 +1,50 @@
+/**
+ * ============================================================================
+ * PROBLEM: Course Schedule
+ * ============================================================================
+ * Given numCourses and prerequisites array [a, b] meaning you must take
+ * course b before course a, determine if all courses can be finished.
+ * 
+ * ============================================================================
+ * APPROACH: DFS Cycle Detection
+ * ============================================================================
+ * Logic:
+ * 1. Build adjacency list (directed graph)
+ * 2. Detect if there's a cycle in the graph
+ * 3. If cycle exists → impossible to complete all courses
+ * 4. If no cycle → possible to complete
+ * 
+ * Three States for Each Node:
+ * - 0 (unvisited): Node not processed yet
+ * - 1 (visiting): Node is in current DFS path (being explored)
+ * - 2 (visited): Node and all descendants fully processed
+ * 
+ * Cycle Detection:
+ * - If we encounter a node with state 1, we found a cycle
+ * - This means we're revisiting a node in the current path
+ * 
+ * Example (POSSIBLE): numCourses = 2, prerequisites = [[1,0]]
+ * Graph: 0 → 1
+ * - Take course 0 first, then course 1
+ * 
+ * Example (IMPOSSIBLE): numCourses = 2, prerequisites = [[1,0],[0,1]]
+ * Graph: 0 → 1 → 0 (cycle)
+ * - Can't take 0 without 1, can't take 1 without 0
+ * 
+ * ============================================================================
+ * TIME COMPLEXITY: O(V + E)
+ * - V = numCourses
+ * - E = prerequisites.length
+ * - Build graph: O(E)
+ * - DFS: O(V + E)
+ * 
+ * SPACE COMPLEXITY: O(V + E)
+ * - Adjacency list: O(V + E)
+ * - State array: O(V)
+ * - Recursion stack: O(V)
+ * ============================================================================
+ */
+
 function canFinish(numCourses, prerequisites) {
   // Build adjacency list
   const graph = Array.from({ length: numCourses }, () => []);

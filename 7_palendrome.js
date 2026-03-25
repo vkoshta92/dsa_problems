@@ -12,6 +12,18 @@
  * 3. `reverseNumber = (reverseNumber * 10) + digit` karke ulta number bunte jao.
  * 4. Number ko chota karte jao (`Math.floor(x/10)`).
  * 5. Last mein check karo: `reverseNumber === xCopy`.
+ * 
+ * ============================================================================
+ * TIME COMPLEXITY: O(log n)
+ * - Number of digits in the number determines iterations
+ * - Each iteration processes one digit (dividing by 10)
+ * - For a number n, there are log₁₀(n) digits
+ * 
+ * SPACE COMPLEXITY: O(1)
+ * - Only using a constant amount of extra space
+ * - Variables: xCopy, reverseNumber, reminder (all O(1))
+ * - No additional data structures or recursion
+ * ============================================================================
  */
 
 var isPalindrome = function (x) {

@@ -13,6 +13,18 @@
  * 3. Reverse hone par check karo ki kya wo limit (`2^31`) se bada hai?
  * 4. Agar limit mein hai, to wapas sign lagake return kar do.
  * 
+ * ============================================================================
+ * TIME COMPLEXITY: O(log n)
+ * - Number of digits determines iterations
+ * - Each iteration processes one digit (dividing by 10)
+ * - For a number n, there are log₁₀(n) digits
+ * 
+ * SPACE COMPLEXITY: O(1)
+ * - Only using a constant amount of extra space
+ * - Variables: copyX, rev, last, limit (all O(1))
+ * - No additional data structures or recursion
+ * ============================================================================
+ * 
  * @param {number} x
  * @return {number}
  */
