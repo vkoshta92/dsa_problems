@@ -6,24 +6,27 @@
  * Agar target nahi mile → [-1, -1] return karna hai.
  * 
  * ============================================================================
- * APPROACH: Binary Search (2 times)
+ * APPROACH: Binary Search (Modified - Track Answer)
  * ============================================================================
  * Logic:
- * 1. First Binary Search → starting index find karne ke liye
- *    - Leftmost occurrence nikalte hain
- * 2. Second Binary Search → ending index find karne ke liye
- *    - Rightmost occurrence nikalte hain
+ * 1. First Binary Search → starting index (first occurrence)
+ *    - Jab target mile → store karo aur LEFT search karo (r = m-1)
+ * 
+ * 2. Second Binary Search → ending index (last occurrence)
+ *    - Jab target mile → store karo aur RIGHT search karo (l = m+1)
  * 
  * Why this works:
- * - Array sorted hai → binary search apply kar sakte hain
- * - Lower bound (first position) aur upper bound (last position) alag-alag milte hain
+ * - Array sorted hai → binary search apply hota hai
+ * - Target milne ke baad bhi search continue karte hain boundary ke liye
+ * - First occurrence ke liye left side explore karte hain
+ * - Last occurrence ke liye right side explore karte hain
  * 
  * ============================================================================
  * TIME COMPLEXITY: O(log n)
- * - Do binary search chal rahe hain → O(log n) + O(log n) = O(log n)
+ * - 2 binary searches → O(log n)
  * 
  * SPACE COMPLEXITY: O(1)
- * - Extra space use nahi ho raha (sirf variables)
+ * - Constant extra space
  * ============================================================================
  */
 
@@ -39,18 +42,19 @@ var searchRange = function(nums, target) {
     let ans = [-1, -1];
 
     // 🔹 FIRST BINARY SEARCH → starting index
-    while (l < r) { // strdting index
+    while (l <= r) {
         let m = l + Math.floor((r - l) / 2);
 
-        if (nums[m] < target) {
-            l = m + 1;
-        } else {
-            r = m;
+        if (target === nums[m]) {
+            ans[0] = m;
+            r = m - 1; // aur left me check karo (first occurrence ke liye)
         }
-    }
-
-    if (nums[l] === target) { // kyoki target l ke babar nhi hua to check kr liay ah
-        ans[0] = l;
+        else if (target > nums[m]) {
+            l = m + 1;
+        }
+        else {
+            r = m - 1;
+        }
     }
 
     // 🔹 RESET POINTERS
@@ -58,25 +62,20 @@ var searchRange = function(nums, target) {
     r = nums.length - 1;
 
     // 🔹 SECOND BINARY SEARCH → ending index
-    while (l < r) { // for ending endex
-    // ab left anad r same h jenge to ibfinte llop me aa jeg
-        let m = l + Math.ceil((r - l) / 2); 
+    while (l <= r) {
+        let m = l + Math.floor((r - l) / 2);
 
-        if (nums[m] > target) {
+        if (target === nums[m]) {
+            ans[1] = m;
+            l = m + 1; // aur right me check karo (last occurrence ke liye)
+        }
+        else if (target > nums[m]) {
+            l = m + 1;
+        }
+        else {
             r = m - 1;
-        } else {
-            l = m; // dafe on left side bababad bhi ho skta h
         }
     }
 
-    if (nums[r] === target) {
-        ans[1] = r;
-    }
-    // if (nums[l] === target) { // ye bhi kr skte h
-    //     ans[1] = l;
-    // }
-
     return ans;
-
-    // deadlock kyoki always middle left ayaega (isliye ceil use kiya hai second case me)
 };
